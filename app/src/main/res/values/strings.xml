@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Chatty Owl</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_listen">Listen</string>
+    <string name="results_tap_mic">Tap mic</string>
+    <string name="results_speak_now">Speak now</string>
+
+    <!-- Preferences -->
+    <string name="pref_endpoint_title">Server Endpoint</string>
+    <string name="pref_default_endpoint">http://127.0.0.1</string>
+    <string name="pref_header_general">General</string>
+
+    <string name="results_tap_mic_retry">Tap mic again to retry</string>
+    <string name="sending_command">Sending command: \"%s\"</string>
+    <string name="response_unknown_error">Unknown error occurred</string>
+    <string name="response_command_executed">Command executed</string>
+    <string name="response_error">Error: %s</string>
+</resources>

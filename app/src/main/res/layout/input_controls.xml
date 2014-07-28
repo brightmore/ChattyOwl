@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/button_wrap"
+        android:layout_width="128dp"
+        android:layout_height="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" >
+        <com.znupy.chattyowl.ui.SoundIndicator
+            android:id="@+id/sound_indicator"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginLeft="32dp"/>
+
+        <ImageButton
+            android:id="@+id/button"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/button_listen"
+            android:background="@drawable/button_listen_bg"
+            android:onClick="onListenClicked" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/voice_results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button_wrap"
+        android:layout_alignBottom="@+id/button_wrap"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/button_wrap"
+        android:text="@string/results_tap_mic"
+        android:textSize="18sp"
+        android:textColor="@color/gray"
+        android:gravity="center_vertical" />
+</RelativeLayout>

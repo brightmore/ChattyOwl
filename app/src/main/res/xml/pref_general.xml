@@ -1,0 +1,10 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="endpoint"
+        android:title="@string/pref_endpoint_title"
+        android:defaultValue="@string/pref_default_endpoint"
+        android:selectAllOnFocus="true"
+        android:inputType="textUri"
+        android:singleLine="true"
+        android:maxLines="1" />
+</PreferenceScreen>
