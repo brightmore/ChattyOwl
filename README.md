@@ -2,6 +2,9 @@
 
 A very simple Android app for listening for voice commands and sending them to your server. App can also display basic name/value properties returned by the server.
 
+![Voice widget in action](http://znupy.com/chattyowl/screenshot.png "Voice widget in action")
+
+
 ## Voice commands
 
 Push the mic button to speak (e.g "Lights on"), when done [SpeechRecognizer](http://developer.android.com/reference/android/speech/SpeechRecognizer.html) will extract your command ("lights on") and POST it to specified endpoint.
