@@ -10,18 +10,18 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.Volley;
 import com.znupy.chattyowl.R;
 import com.znupy.chattyowl.activities.MainActivity;
+import com.znupy.chattyowl.models.Property;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 /**
- * Created by samok on 27/07/14.
+ * Created by samok on 28/07/14.
  */
-public class CommandCenter {
-    private static final String TAG = CommandCenter.class.getSimpleName();
+public class PropertiesLoader {
+    private static final String TAG = PropertiesLoader.class.getSimpleName();
+
     private static final int SOCKET_TIMEOUT_MS = 30000;
     private static final int MAX_RETRIES = 0;
 
@@ -30,31 +30,29 @@ public class CommandCenter {
 
     private String serverUrl;
 
-    public CommandCenter(Context context) {
+    public PropertiesLoader(Context context) {
         this.context = context;
         requestQueue = ((MainActivity)context).getRequestQueue();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        serverUrl = prefs.getString("endpoint", context.getString(R.string.pref_default_endpoint));
+        serverUrl = prefs.getString("properties_endpoint", context.getString(R.string.pref_default_endpoint));
     }
 
-    public void post(final String command, final ResponseListener listener) {
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("command", command);
+    public void get(final ResponseListener listener) {
 
-        GsonRequest<BaseResponse> request = new GsonRequest<BaseResponse>(
-                Request.Method.POST,
+        GsonRequest<PropertiesResponse> request = new GsonRequest<PropertiesResponse>(
+                Request.Method.GET,
                 serverUrl,
-                params,
-                BaseResponse.class,
-                new Response.Listener<BaseResponse>() {
+                null,
+                PropertiesResponse.class,
+                new Response.Listener<PropertiesResponse>() {
 
                     @Override
-                    public void onResponse(BaseResponse response) {
+                    public void onResponse(PropertiesResponse response) {
                         Log.d(TAG, "onResponse: " + response);
 
                         if(listener == null) return;
                         if(response.success)
-                            listener.onSuccess();
+                            listener.onSuccess(response.properties);
                         else
                             listener.onError(response.message == null ?
                                     context.getString(R.string.response_unknown_error) :
@@ -83,7 +81,7 @@ public class CommandCenter {
     }
 
     public interface ResponseListener {
-        public void onSuccess();
+        public void onSuccess(List<Property> properties);
         public void onError(String message);
     }
 }

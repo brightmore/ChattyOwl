@@ -7,4 +7,13 @@
         android:inputType="textUri"
         android:singleLine="true"
         android:maxLines="1" />
+
+    <EditTextPreference
+        android:key="properties_endpoint"
+        android:title="@string/pref_properties_endpoint_title"
+        android:defaultValue="@string/pref_default_properties_endpoint"
+        android:selectAllOnFocus="true"
+        android:inputType="textUri"
+        android:singleLine="true"
+        android:maxLines="1" />
 </PreferenceScreen>

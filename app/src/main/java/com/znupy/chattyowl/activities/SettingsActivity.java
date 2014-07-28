@@ -77,6 +77,7 @@ public class SettingsActivity extends PreferenceActivity {
         addPreferencesFromResource(R.xml.pref_general);
 
         bindPreferenceSummaryToValue(findPreference("endpoint"));
+        bindPreferenceSummaryToValue(findPreference("properties_endpoint"));
     }
 
     /** {@inheritDoc} */

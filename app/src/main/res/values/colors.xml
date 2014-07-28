@@ -3,4 +3,6 @@
     <color name="button_listen_bg">#cccccc</color>
     <color name="white">#ffffff</color>
     <color name="gray">#999999</color>
+    <color name="window_background">#eeeeee</color>
+    <color name="property_divider">#dddddd</color>
 </resources>

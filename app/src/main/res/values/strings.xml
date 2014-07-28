@@ -8,14 +8,18 @@
     <string name="results_tap_mic">Tap mic</string>
     <string name="results_speak_now">Speak now</string>
 
-    <!-- Preferences -->
-    <string name="pref_endpoint_title">Server Endpoint</string>
-    <string name="pref_default_endpoint">http://127.0.0.1</string>
-    <string name="pref_header_general">General</string>
-
     <string name="results_tap_mic_retry">Tap mic again to retry</string>
     <string name="sending_command">Sending command: \"%s\"</string>
     <string name="response_unknown_error">Unknown error occurred</string>
     <string name="response_command_executed">Command executed</string>
     <string name="response_error">Error: %s</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Preferences -->
+    <string name="pref_endpoint_title">Server Endpoint</string>
+    <string name="pref_default_endpoint">http://127.0.0.1/command</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_properties_endpoint_title">Properties endpoint</string>
+    <string name="pref_default_properties_endpoint">http://127.0.0.1/data</string>
+
 </resources>
